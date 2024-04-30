@@ -63,6 +63,7 @@ let contentHeight = document.getElementById("content1").clientHeight;
 const update = (event) => {
   mainHeight = main.clientHeight;
   bodyHeight = document.body.clientHeight;
+  docHeight = document.documentElement.clientHeight;
   if (event.deltaY > 0) {
     if (bodyHeight <= mainHeight) {
       document.body.style.height =
