@@ -80,6 +80,28 @@ const update = (event) => {
 
 window.addEventListener("wheel", update);
 
+const touchUpdate = (event) => {
+  mainHeight = main.clientHeight;
+  bodyHeight = document.body.clientHeight;
+  docHeight = document.documentElement.clientHeight;
+  if (event.touches[0].clientY > 0) {
+    if (bodyHeight <= mainHeight) {
+      document.body.style.height =
+        document.querySelector("body").clientHeight +
+        event.touches[0].clientY +
+        "px";
+    } else {
+      addNewContent();
+    }
+  } else if (bodyHeight >= docHeight) {
+    removeLastContent();
+    document.body.style.height =
+      document.querySelector("body").clientHeight +
+      event.touches[0].clientY +
+      "px";
+  }
+};
+
 // addNewContent();
 // q(contentNum);
 // q(mainHeight);
