@@ -31,3 +31,7 @@ main {
 .even {
   transform: translateX(1000px);
 }
+
+/* .box:nth-of-type(even) {
+  transform: translateX(-400%);
+} */
